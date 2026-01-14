@@ -3,7 +3,10 @@ import os
 
 # Ultra-simple template expansion script
 def generate_tool(tool_name):
-    template_path = "resources/ToolTemplate.py.hbs"
+    # Robustly find the template relative to this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    skill_root = os.path.dirname(script_dir)
+    template_path = os.path.join(skill_root, "resources", "ToolTemplate.py.hbs")
     output_filename = f"{tool_name}Tool.py"
     
     if os.path.exists(output_filename):
