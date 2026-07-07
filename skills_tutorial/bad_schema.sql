@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-DROP TABLE IF EXISTS legacy_users;
-
-CREATE TABLE userProfile (
+CREATE TABLE user_profile (
     id INT PRIMARY KEY,
     bio TEXT
 );
 
 CREATE TABLE posts (
+    id INT PRIMARY KEY,
     title TEXT,
     content TEXT,
     created_at TIMESTAMP
